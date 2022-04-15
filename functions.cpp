@@ -4,30 +4,19 @@
 using namespace std;
 
 int max_of_four (int a, int b, int c, int d){
-    if (a>b){
-      if (a>c){
-        if(a>d){
-          return a;
-        }
-        else{
-          return d;
-        }
-      }else if (c>d){
-        return c;
-      }
-      else{
-        return d;
-      }
+  int value;
+  int maxValue = -2147483648;
 
-    }else if (b>c){
-      return b;
-    }else if(c>d){
-          return c;
-    }else{
-      return d;
+  int num[4] ={a, b, c, d};
+
+  for(int i = 0; i < 4; i++){
+    value = num[i];
+    if (value > maxValue){
+      maxValue = value;
     }
   }
-
+  return maxValue;
+}
 
 int main() {
     int a, b, c, d;
